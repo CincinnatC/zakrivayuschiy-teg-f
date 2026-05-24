@@ -1,0 +1,13 @@
+/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root{
+  --main-font: "Inter";
+  --accent-font: "PressStart2P";
+  --card-weight: 715;
+  --text-weight: 410;
+  --main-background-to-right: to right, #d3d3d3 0px 2px, transparent 2px 4px;
+  --main-background-to-top: to bottom, #d3d3d3 0px 2px, transparent 2px 4px;
+  --main-background-color: to bottom, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a 100%;
+  --block-size-width: clamp(23.438rem, 16.285rem + 30.516vw, 43.75rem);/*посчитал на каком то сайте*/
+  --block-header-size-height: clamp(20.438rem, 19.535rem + 3.85vi, 23rem);
+  --main-color: #000000;
+}
