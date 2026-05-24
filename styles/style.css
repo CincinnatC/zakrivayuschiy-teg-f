@@ -4,7 +4,6 @@
 ✦ like-icon — для svg-иконки анимированного сердца
 ✦ card__like-button — для кнопки Like рядом с иконкой
 ✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
@@ -21,6 +20,15 @@
   font-variation-settings: "wght" var(--text-weight);
   background-image: repeating-linear-gradient(var(--main-background-to-right)), repeating-linear-gradient(var(--main-background-to-top)), linear-gradient(var(--main-background-color));
   background-size: cover;
+  background-attachment: fixed;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 49px;
 }
 
 .header {
@@ -53,7 +61,6 @@
 }
 
 .card-title {
-  width: var(--block-size-width);
   font-weight: 715;
   font-size: 18px;
   padding: 4px 10px 4px 10px;
@@ -67,6 +74,11 @@
 .card-img {
   border-top: 2px var(--main-color) solid;
   border-bottom: 2px var(--main-color) solid;
+  width: 100%;
+}
+
+.container-img {
+  position: relative;
 }
 
 .card-text {
@@ -75,4 +87,79 @@
   gap: 25px;
   padding: 25px;
   font-size: 18px;
+}
+
+.button {
+  display: flex;
+  height: 38px;
+  justify-content: right;
+  align-items: center;
+  gap: 12px;
+  width: 169px;
+  align-self: flex-end;
+}
+
+.button-reset {
+  border: none;
+  padding: 0;
+  background-color: initial;
+  cursor: pointer;
+}
+
+.button__text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.content-buttons-like {
+  font-family: var(--accent-font);
+  font-size: 14px;
+  border: 2px var(--main-color) solid;
+  width: 130px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.like-icon {
+  width: 27px;
+  height: 24px;
+}
+
+.label {
+  position: absolute;
+  top: 30px;
+  right: 25px;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  text-shadow:
+    -1px 0 #FFFFFF,
+    1px 0 #FFFFFF,
+    0 -1px #FFFFFF,
+    0 1px #FFFFFF;
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+}
+
+.floppy {
+  width: 28px;
+  height: 28px;
+}
+
+.footer-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFFFF;
+}
+
+.content-buttons-footer {
+  padding: 17px 20px;
+  border: 2px var(--main-color) solid;
+  font-family: var(--accent-font);
+  font-size: 14px;
 }
