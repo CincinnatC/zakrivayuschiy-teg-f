@@ -21,6 +21,7 @@
   background-image: repeating-linear-gradient(var(--main-background-to-right)), repeating-linear-gradient(var(--main-background-to-top)), linear-gradient(var(--main-background-color));
   background-size: cover;
   background-attachment: fixed;
+  margin-bottom: 100px;
 }
 
 .main {
@@ -91,12 +92,10 @@
 
 .button {
   display: flex;
-  height: 38px;
   justify-content: right;
   align-items: center;
-  gap: 12px;
-  width: 169px;
-  align-self: flex-end;
+  font-family: var(--accent-font);
+  font-size: 14px;
 }
 
 .button-reset {
@@ -106,27 +105,35 @@
   cursor: pointer;
 }
 
-.button__text {
+.buttons-like {
+  align-self: flex-end;
+  width: 169px;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.buttons-like span {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-}
-
-.content-buttons-like {
-  font-family: var(--accent-font);
-  font-size: 14px;
-  border: 2px var(--main-color) solid;
   width: 130px;
   height: 38px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border: 2px solid var(--main-color);
 }
 
-.like-icon {
-  width: 27px;
-  height: 24px;
+.button-save {
+  justify-content: center;
+  flex-direction: column;
+  width: 306px;
+  background-color: #FFFFFF;
+  height: 84px;
+  gap: 8px;
+  border: 2px solid var(--main-color);
+}
+
+.button-save svg {
+  width: 28px;
+  height: 28px;
 }
 
 .label {
@@ -142,24 +149,99 @@
     0 1px #FFFFFF;
   opacity: 0.5;
   mix-blend-mode: hard-light;
+  z-index: 1;
 }
 
-.floppy {
-  width: 28px;
-  height: 28px;
+.dialog {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin: 0;
+  transform: translate(-50%, -50%);
+  width: 341px;
+  height: 191px;
 }
 
-.footer-button {
+.dialog[open] {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #FFFFFF;
+  flex-direction: column;
+  gap: 30px;
 }
 
-.content-buttons-footer {
-  padding: 17px 20px;
-  border: 2px var(--main-color) solid;
-  font-family: var(--accent-font);
+.dialog::backdrop {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.dialog svg {
+  width: 39px;
+  height: 39px;
+  flex-shrink: 0;
+}
+
+.dialog-text {
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
   font-size: 14px;
+  font-family: var(--accent-font);
+  width: 261px;
+  height: 63px;
+}
+
+.dialog-text p {
+  line-height: 1.5;
+}
+
+.dialog-button {
+  width: 261px;
+  height: 38px;
+  border: 2px solid var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.filter-saturate {
+  filter: saturate(150%);
+}
+
+.filter-hue-rotate {
+  filter: hue-rotate(120deg);
+}
+
+.filter-sepia {
+  filter: sepia(80%) hue-rotate(306deg) saturate(180%);
+}
+
+.filter-invert {
+  filter: invert(0.3) saturate(130%);
+}
+
+.filter-blur-grayscale {
+  filter: blur(0.2rem) grayscale(0.85); /*изображение по краям блюрится. Не забудь исправить*/
+}
+
+.filter-grayscale-sepia {
+  filter: grayscale(0.5) sepia(50%);
+}
+
+.filter-sepia-saturate {
+  filter: sepia(60%) saturate(158%) contrast(120%);
+}
+
+@media (width > 375px) {
+  .main {
+    gap: 46px;
+  }
+
+  .button-save {
+    flex-direction: row;
+    width: 335px;
+    height: 55px;
+  }
 }
